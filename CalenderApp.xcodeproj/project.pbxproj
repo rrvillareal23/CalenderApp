@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B73A08082BF15B5F000C9B79 /* CalenderAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A08072BF15B5F000C9B79 /* CalenderAppApp.swift */; };
-		B73A080A2BF15B5F000C9B79 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A08092BF15B5F000C9B79 /* ContentView.swift */; };
+		B73A08082BF15B5F000C9B79 /* CalenderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A08072BF15B5F000C9B79 /* CalenderApp.swift */; };
+		B73A080A2BF15B5F000C9B79 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A08092BF15B5F000C9B79 /* MainView.swift */; };
 		B73A080C2BF15B60000C9B79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73A080B2BF15B60000C9B79 /* Assets.xcassets */; };
 		B73A080F2BF15B60000C9B79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73A080E2BF15B60000C9B79 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B73A08042BF15B5F000C9B79 /* CalenderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalenderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B73A08072BF15B5F000C9B79 /* CalenderAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderAppApp.swift; sourceTree = "<group>"; };
-		B73A08092BF15B5F000C9B79 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B73A08072BF15B5F000C9B79 /* CalenderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderApp.swift; sourceTree = "<group>"; };
+		B73A08092BF15B5F000C9B79 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B73A080B2BF15B60000C9B79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B73A080E2BF15B60000C9B79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,8 +51,8 @@
 		B73A08062BF15B5F000C9B79 /* CalenderApp */ = {
 			isa = PBXGroup;
 			children = (
-				B73A08072BF15B5F000C9B79 /* CalenderAppApp.swift */,
-				B73A08092BF15B5F000C9B79 /* ContentView.swift */,
+				B73A08072BF15B5F000C9B79 /* CalenderApp.swift */,
+				B73A08092BF15B5F000C9B79 /* MainView.swift */,
 				B73A080B2BF15B60000C9B79 /* Assets.xcassets */,
 				B73A080D2BF15B60000C9B79 /* Preview Content */,
 			);
@@ -137,8 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B73A080A2BF15B5F000C9B79 /* ContentView.swift in Sources */,
-				B73A08082BF15B5F000C9B79 /* CalenderAppApp.swift in Sources */,
+				B73A080A2BF15B5F000C9B79 /* MainView.swift in Sources */,
+				B73A08082BF15B5F000C9B79 /* CalenderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
