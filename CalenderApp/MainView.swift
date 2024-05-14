@@ -42,12 +42,11 @@ struct MainView: View {
                         withAnimation {
                             selectedMonth -= 1
                         }
-                        
                     } label: {
                         Image(systemName: "lessthan")
                             .resizable()
-                            .scaledToFill()
-                            .frame(width: 16, height: 28)
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
                     }
                     
                     Spacer()
@@ -61,17 +60,13 @@ struct MainView: View {
                         withAnimation {
                             selectedMonth += 1
                         }
-                        
                     } label: {
                         Image(systemName: "greaterthan")
                             .resizable()
-                            .scaledToFill()
-                            .frame(width: 16, height: 28)
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
                     }
-
-                    
                     Spacer()
-
                 }
                 
                 HStack {
@@ -87,6 +82,24 @@ struct MainView: View {
                         ZStack {
                             if value.day != -1 {
                                 Text("\(value.day)")
+                                    .foregroundColor(value.day % 2 != 0 ? .blue : .black)
+                                    .fontWeight(value.day % 2 != 0 ? .bold : .none)
+
+                                    .background{
+                                        ZStack (alignment: .bottom) {
+                                            Circle()
+                                                .frame(width: 48, height: 48)
+                                                .foregroundColor(value.day % 2 != 0 ? .blue.opacity(0.3) : .clear)
+                                            
+                                            
+                                            if value.date.string() == Date().string() {
+                                                Circle()
+                                                    .frame(width: 8, height: 8)
+                                                    .foregroundColor(value.day % 2 != 0 ? .blue : .gray)
+
+                                            }
+                                        }
+                                    }
                             } else {
                                 Text("")
                             }
@@ -97,6 +110,7 @@ struct MainView: View {
             }
             .padding()
         }
+        .frame(maxHeight: .infinity, alignment: .top)
         .onChange(of: selectedMonth) {
                 selectedDate = fetchSelectedMonth()
         }
@@ -165,6 +179,12 @@ extension Date {
         }
         
         return dates
+    }
+    
+    func string() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        return formatter.string(from: self)
     }
 }
 
