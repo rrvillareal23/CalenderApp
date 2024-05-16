@@ -52,7 +52,7 @@ struct MainView: View {
                         
                         Spacer()
                         
-                        Text(selectedDate.monthAndYear())
+                        Text(selectedDate.monthYearFormat())
                             .font(.title2)
                         
                         Spacer()
@@ -96,7 +96,7 @@ struct MainView: View {
                                                             .foregroundColor(value.day % 2 != 0 ? .blue.opacity(0.3) : .clear)
                                                         
                                                         
-                                                        if value.date.string() == Date().string() {
+                                                        if value.date.monthDayYearFormat() == Date().monthDayYearFormat() {
                                                             Circle()
                                                                 .frame(width: 8, height: 8)
                                                                 .foregroundColor(value.day % 2 != 0 ? .blue : .gray)
@@ -155,7 +155,7 @@ struct CalendarDate: Identifiable {
 
 extension Date {
     
-    func monthAndYear() -> String {
+    func monthYearFormat() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM YYYY"
         
@@ -189,9 +189,15 @@ extension Date {
         return dates
     }
     
-    func string() -> String {
+    func monthDayYearFormat() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
+        return formatter.string(from: self)
+    }
+    
+    func timeFromDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
         return formatter.string(from: self)
     }
 }
