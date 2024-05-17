@@ -16,10 +16,12 @@ struct DayView: View {
         Calendar.current.date(byAdding: .hour, value: 3, to: Date())!,
         Calendar.current.date(byAdding: .hour, value: 4, to: Date())!,
     ]
+    @State var selectedDate: Date?
+    
     var body: some View {
         ScrollView {
             VStack {
-                Text("May 15, 2024")
+                Text("May 16, 2024")
                 
                 Divider()
                     .padding(.vertical)
@@ -31,13 +33,49 @@ struct DayView: View {
                 Text("Duration: 30 min")
                 
                 ForEach(dates, id: \.self) { date in
-                    Button{
+                    HStack {
+                        Button{
+                            withAnimation {
+                                selectedDate = date
+                            }
+                        } label: {
+                            Text(date.timeFromDate())
+                                .bold()
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(selectedDate == date ? .white : .blue)
+                                .background(
+                                    ZStack {
+                                        if selectedDate == date {
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .foregroundColor(.gray)
+                                        } else {
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke()
+                                        }
+                                    }
+                                )
+                        }
                         
-                    } label: {
-                        Text(date.timeFromDate())
-                            .padding()
+                        if selectedDate == date {
+                            NavigationLink {
+                                EmptyView()
+                            } label: {
+                                Text("Next")
+                                    .bold()
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.white)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                                    )
+                            }
+                        }
                     }
+                        
                 }
+                .padding(.horizontal)
             }
         }
         .navigationTitle("Wednesday")
