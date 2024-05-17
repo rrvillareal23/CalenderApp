@@ -25,7 +25,6 @@ struct MainView: View {
                 Text("Calender App")
                     .font(.title)
                     .bold()
-                
                 Rectangle()
                     .frame(height: 1)
                     .foregroundColor(.gray)

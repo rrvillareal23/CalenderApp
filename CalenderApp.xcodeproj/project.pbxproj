@@ -12,6 +12,7 @@
 		B73A080C2BF15B60000C9B79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73A080B2BF15B60000C9B79 /* Assets.xcassets */; };
 		B73A080F2BF15B60000C9B79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73A080E2BF15B60000C9B79 /* Preview Assets.xcassets */; };
 		B79CB3BA2BF403460005D136 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CB3B92BF403460005D136 /* DayView.swift */; };
+		B7CA6A772BF6E7880072D78C /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA6A762BF6E7880072D78C /* BookingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		B73A080B2BF15B60000C9B79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B73A080E2BF15B60000C9B79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B79CB3B92BF403460005D136 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		B7CA6A762BF6E7880072D78C /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				B79CB3B92BF403460005D136 /* DayView.swift */,
 				B73A080B2BF15B60000C9B79 /* Assets.xcassets */,
 				B73A080D2BF15B60000C9B79 /* Preview Content */,
+				B7CA6A762BF6E7880072D78C /* BookingView.swift */,
 			);
 			path = CalenderApp;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7CA6A772BF6E7880072D78C /* BookingView.swift in Sources */,
 				B73A080A2BF15B5F000C9B79 /* MainView.swift in Sources */,
 				B79CB3BA2BF403460005D136 /* DayView.swift in Sources */,
 				B73A08082BF15B5F000C9B79 /* CalenderApp.swift in Sources */,
