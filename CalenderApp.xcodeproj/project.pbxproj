@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B712B4752BF8F42800B6F3DF /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B712B4742BF8F42800B6F3DF /* ConfirmationView.swift */; };
 		B73A08082BF15B5F000C9B79 /* CalenderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A08072BF15B5F000C9B79 /* CalenderApp.swift */; };
 		B73A080A2BF15B5F000C9B79 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A08092BF15B5F000C9B79 /* MainView.swift */; };
 		B73A080C2BF15B60000C9B79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73A080B2BF15B60000C9B79 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B712B4742BF8F42800B6F3DF /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		B73A08042BF15B5F000C9B79 /* CalenderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalenderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B73A08072BF15B5F000C9B79 /* CalenderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderApp.swift; sourceTree = "<group>"; };
 		B73A08092BF15B5F000C9B79 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -58,9 +60,10 @@
 				B73A08072BF15B5F000C9B79 /* CalenderApp.swift */,
 				B73A08092BF15B5F000C9B79 /* MainView.swift */,
 				B79CB3B92BF403460005D136 /* DayView.swift */,
+				B7CA6A762BF6E7880072D78C /* BookingView.swift */,
+				B712B4742BF8F42800B6F3DF /* ConfirmationView.swift */,
 				B73A080B2BF15B60000C9B79 /* Assets.xcassets */,
 				B73A080D2BF15B60000C9B79 /* Preview Content */,
-				B7CA6A762BF6E7880072D78C /* BookingView.swift */,
 			);
 			path = CalenderApp;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B712B4752BF8F42800B6F3DF /* ConfirmationView.swift in Sources */,
 				B7CA6A772BF6E7880072D78C /* BookingView.swift in Sources */,
 				B73A080A2BF15B5F000C9B79 /* MainView.swift in Sources */,
 				B79CB3BA2BF403460005D136 /* DayView.swift in Sources */,

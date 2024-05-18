@@ -82,7 +82,7 @@ struct MainView: View {
                             ZStack {
                                 if value.day != -1 {
                                     NavigationLink{
-                                        EmptyView()
+                                        DayView()
                                     } label: {
                                             Text("\(value.day)")
                                                 .foregroundColor(value.day % 2 != 0 ? .blue : .black)

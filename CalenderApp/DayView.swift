@@ -59,7 +59,7 @@ struct DayView: View {
                         
                         if selectedDate == date {
                             NavigationLink {
-                                EmptyView()
+                                BookingView()
                             } label: {
                                 Text("Next")
                                     .bold()
