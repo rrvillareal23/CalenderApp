@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct BookingView: View {
+    @State private var name = ""
+    @State private var email = ""
+    @State private var notes = ""
+
     var body: some View {
-        VStack {
-            VStack(alignment: .leading, spacing: 16) {
+        VStack (alignment: .leading){
+            VStack(alignment: .leading, spacing: 10) {
                 HStack {
                     Image(systemName: "clock")
                     Text("30 min")
@@ -30,6 +34,55 @@ struct BookingView: View {
                     Image(systemName: "globe")
                     Text("Pacific Time - US & Canada")
                 }
+            }
+            .padding()
+            
+            Divider()
+            
+            VStack (alignment: .leading, spacing: 10){
+                Text("Enter Details")
+                    .font(.title)
+                    .bold()
+                
+                Text("Name")
+                TextField("", text: $name)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke()
+                    )
+                
+                Text("Email")
+                TextField("", text: $email)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke()
+                    )
+                
+                Text("Please share anything that will help prepare for our meeting.")
+                TextField("", text: $notes, axis: .vertical)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke()
+                    )
+                
+                Spacer()
+
+                NavigationLink {
+                        EmptyView()
+                    } label: {
+                        Text("Schedule Event")
+                            .bold()
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(.blue)
+                            )
+                    }
             }
             .padding()
         }
