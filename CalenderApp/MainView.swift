@@ -43,10 +43,11 @@ struct MainView: View {
                                 selectedMonth -= 1
                             }
                         } label: {
-                            Image(systemName: "lessthan")
+                            Image(systemName: "lessthan.circle.fill")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 20, height: 20)
+                                .frame(width: 32, height: 32)
+                                .foregroundColor(.gray)
                         }
                         
                         Spacer()
@@ -61,10 +62,12 @@ struct MainView: View {
                                 selectedMonth += 1
                             }
                         } label: {
-                            Image(systemName: "greaterthan")
+                            Image(systemName: "greaterthan.circle.fill")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 20, height: 20)
+                                .frame(width: 32, height: 32)
+                                .foregroundColor(.gray)
+
                         }
                         Spacer()
                     }
@@ -82,7 +85,7 @@ struct MainView: View {
                             ZStack {
                                 if value.day != -1 {
                                     NavigationLink{
-                                        DayView()
+                                        DayView(currentDate: value.date)
                                     } label: {
                                             Text("\(value.day)")
                                                 .foregroundColor(value.day % 2 != 0 ? .blue : .black)
@@ -119,6 +122,13 @@ struct MainView: View {
             .onChange(of: selectedMonth) {
                     selectedDate = fetchSelectedMonth()
             }
+            .task {
+                do {
+                    _ = try await DatabaseManager.shared.fetchHours()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
 
         }
     }
@@ -154,13 +164,6 @@ struct CalendarDate: Identifiable {
 
 extension Date {
     
-    func monthYearFormat() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM YYYY"
-        
-        return formatter.string(from: self)
-    }
-    
     func datesOfMonth() -> [Date] {
         let calendar = Calendar.current
         let currentMonth = calendar.component(.month, from: self)
@@ -188,16 +191,58 @@ extension Date {
         return dates
     }
     
+    // Returns May 2024
+    func monthYearFormat() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM YYYY"
+        
+        return formatter.string(from: self)
+    }
+    
+    // Retruns 05/18/2024
     func monthDayYearFormat() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
         return formatter.string(from: self)
     }
     
+    // Returns  May 18, 2024
+    func fullMonthDayYearFormat() -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d, YYYY"
+        return formatter.string(from: self)
+    }
+    
+    // Day of the week
+    func dayOfTheWeek() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: self)
+    }
+    
+    // Returns 10:10 AM
     func timeFromDate() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
         return formatter.string(from: self)
+    }
+    
+    func bookingViewDateFormat() -> String {
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "hh:mm a"
+        
+        let start = timeFormatter.string(from: self)
+        let endDate = Calendar.current.date(byAdding: .minute, value: 30, to: self)!
+        
+        let end = timeFormatter.string(from: endDate)
+        
+        let day = self.dayOfTheWeek()
+        
+        let fullDayString = self.fullMonthDayYearFormat()
+        
+        return "\(start) - \(end), \(day), \(fullDayString)"
+        
     }
 }
 

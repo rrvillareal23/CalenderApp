@@ -18,10 +18,12 @@ struct DayView: View {
     ]
     @State var selectedDate: Date?
     
+    var currentDate: Date
+    
     var body: some View {
         ScrollView {
             VStack {
-                Text("May 16, 2024")
+                Text(currentDate.fullMonthDayYearFormat())
                 
                 Divider()
                     .padding(.vertical)
@@ -59,7 +61,7 @@ struct DayView: View {
                         
                         if selectedDate == date {
                             NavigationLink {
-                                BookingView()
+                                BookingView(currentDate: selectedDate!)
                             } label: {
                                 Text("Next")
                                     .bold()
@@ -78,13 +80,13 @@ struct DayView: View {
                 .padding(.horizontal)
             }
         }
-        .navigationTitle("Wednesday")
+        .navigationTitle(currentDate.dayOfTheWeek())
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
     NavigationStack{
-        DayView()
+        DayView(currentDate: Date())
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ConfirmationView: View {
+    
+    var currentDate: Date
     var body: some View {
         VStack {
             Image("Ricky")
@@ -34,14 +36,14 @@ struct ConfirmationView: View {
                     Text("iOS Dev 30 Min Session")
                 }
                 
-                HStack{
+                HStack(alignment: .top){
                     Image(systemName: "calendar")
-                    Text("time - time, Day, Month Day#, 2024")
+                    Text(currentDate.bookingViewDateFormat())
                 }
                 
                 HStack{
                     Image(systemName: "globe.americas")
-                    Text("Pacific Standard Time - US % Canada")
+                    Text("Pacific Standard Time - US + Canada")
                 }
                 
                 HStack{
@@ -78,6 +80,6 @@ struct ConfirmationView: View {
 
 #Preview {
     NavigationStack{
-        ConfirmationView()
+        ConfirmationView(currentDate: Date())
     }
 }
